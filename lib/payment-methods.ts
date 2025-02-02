@@ -6,18 +6,18 @@ export const PaymentMethods = [
     },
     {
         type:'Debit Card',
-        providers:['Mastercard','Visa'],
+        providers:['Mastercard','Visa','Discover'],
         imageUrl:'/cards.jpg'
     },
     {
         type:'Credit Card',
-        providers:['Mastercard','Visa'],
+        providers:['Mastercard','Visa','Discover'],
         imageUrl:'/cards.jpg'
     },
     {
         type:'Net Banking',
         providers:['ICICI Bank','SBI Bank','HDFC Bank'],
-        imageUrl:'/net-banking.webp'
+        imageUrl:'/net-banking.png'
     },
 ]
 

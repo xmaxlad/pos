@@ -3,7 +3,8 @@ import {Service, User} from '@/interface/interface'
 export default function Receipt({services,user}:{services:Service[],user:User}){
     const totalBillAmount = services.reduce((total, service)=>{return total + service.price},0) 
     return(
-        <div className='flex flex-col'>
+        <div className='flex flex-col border-2 rounded-md p-2 gap-y-4'>
+            Receipt
            <div className='flex flex-row justify-between'>
             <div>
                 <h3>Biller Company Name</h3>
@@ -17,10 +18,16 @@ export default function Receipt({services,user}:{services:Service[],user:User}){
             </div>
 
             <div>
-                {services.map((service,idx)=><div className='flex flex-row justify-between' key={idx}>
-                    <div>
-                        {service.name}
-                        {service.description}
+                <div className='flex flex-row justify-between'>
+                     <div>Service Name</div>
+                     <div>
+                    Service Price
+                </div>
+                </div> 
+                {services.map((service,idx)=><div className='flex flex-row justify-between my-2' key={idx}>
+                    <div className='flex flex-col my-1'>
+                        <div>{service.name}</div>
+                        <div>{service.description}</div>
                     </div>
                     <div>
                         {service.price}
@@ -28,7 +35,7 @@ export default function Receipt({services,user}:{services:Service[],user:User}){
                 </div>)}
             </div>
 
-            <div className='flex flex-row justify-between'>
+            <div className='flex flex-row justify-between my-2'>
                 <div>
                     Total Bill Amount : 
                 </div>

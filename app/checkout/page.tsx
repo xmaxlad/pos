@@ -12,6 +12,7 @@ export default function Page(){
     return(
         <div className='max-w-md mx-auto my-8 p-6 border rounded-lg shadow-lg bg-white'>
             <div className='flex flex-col gap-y-4'>
+                <div>Enter your details for checkout.</div>
                 <Input className='border border-gray-300 rounded-md p-2' type='text' placeholder="Name" onChange={(e) => {
                     setUser({ ...user, name: e.target.value }) 
                 }}></Input>
@@ -23,7 +24,7 @@ export default function Page(){
                 }}></Input>
             </div>
             <div>
-                <Button className='w-full mt-4 bg-blue-500 text-white hover:bg-blue-600 rounded-md p-2' onClick={()=>{router.push('/payment')}}>
+                <Button className='w-full mt-4 text-white rounded-md p-2' onClick={()=>{router.push('/payment')}}>
                     Proceed to payment
                 </Button>
             </div>

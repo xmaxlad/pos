@@ -26,12 +26,11 @@ export default function Page(){
     pdf.save("receipt.pdf");
   };
     return(
-        <div className='max-w-xl mx-auto'>
+        <div className='max-w-xl mx-auto my-8'>
             <div ref={screenRef}>
-                <h2>Receipt</h2>
                 <Receipt services={cartItems} user={user === null ? {} : user}></Receipt> 
             </div>
-            <Button onClick={downloadReceipt}>Download Receipt</Button>
+            <Button className='my-4' onClick={downloadReceipt}>Download Receipt</Button>
         </div>
     )
 }

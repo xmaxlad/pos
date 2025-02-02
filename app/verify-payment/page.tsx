@@ -32,7 +32,11 @@ export default function Page() {
             <InputOTPSlot index={5} />
           </InputOTPGroup>
         </InputOTP>
-        <Button className='w-full flex justify-center mx-auto' onClick={()=>{router.push('/receipt')}}>Submit OTP</Button>
+        <Button className='w-full flex justify-center mx-auto' onClick={()=>{
+          if(value === '000000'){
+            router.push('/receipt')
+          }else alert('Invalid OTP, try again.')
+        }}>Submit OTP</Button>
       </div>
     </div>
   )

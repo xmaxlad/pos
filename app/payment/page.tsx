@@ -23,14 +23,14 @@ export default function Page(){
     }
     return(
         <div className='max-w-4xl mx-auto flex flex-row justify-around m-4'>
-            <div className='w-fit'>
+            <div className='w-fit grid grid-cols-1 sm:grid-cols-2 gap-6 mx-4'>
                 {PaymentMethods.map((m,idx)=>
-                <div className={`cursor-pointer ${method?.type === m.type ? 'bg-blue-400' : ''}`} key={idx} onClick={()=>selectMethod(m.type)}>
+                <div className={`cursor-pointer ${method?.type === m.type ? 'bg-blue-400' : ''} my-4 p-2 border-2 rounded-md`} key={idx} onClick={()=>selectMethod(m.type)}>
                     <PaymentMethod paymentMethod={m}></PaymentMethod>
                 </div>
                 )}
             </div>
-            <div className=''>
+            <div className='my-4'>
                 {method === null ? (
                     <div>Click on a payment method to continue.</div>
                 ) : (
@@ -103,7 +103,7 @@ function PayViaNetBanking(){
         <div className='max-w-lg'>
             <div>Net Banking</div>
             <div>Please select your bank, you will be redirected to the bank page</div>
-            <div className='flex flex-row justify-between'>
+            <div className='flex flex-row justify-between py-4'>
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                     <Button variant="outline">{bank}</Button> 
