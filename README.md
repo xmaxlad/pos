@@ -15,9 +15,6 @@ The search is only in-browser, i.e., this will only search from the services ava
 ### Pagination
 The current home page does not have a pagination feature, one can be implemented using observation ref.
 
-### Cart
-If the same item is added twice(or more than one), it will appear differently in the cart. There is no feature to display the same item once along with the quantity.
-
 ### Payment Verification
 The current version assumes all payment methods will need only a OTP, which might not be the case, each payment method will have a different flow.
 
