@@ -1,7 +1,6 @@
 'use client'
 
 import {Button} from '@/components/ui/button'
-import {useStore} from '@/store/useStore'
 import Receipt from '@/components/Receipt' 
 import {useRef} from 'react'
 import html2canvas from 'html2canvas'
@@ -9,7 +8,6 @@ import jsPDF from 'jspdf'
 
 export default function Page(){
     //todo refactor this to react-pdf
-    const {cartItems,user} = useStore()
     const screenRef = useRef<HTMLDivElement>(null);
 
   const downloadReceipt = async () => {
