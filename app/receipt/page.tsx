@@ -8,7 +8,7 @@ import html2canvas from 'html2canvas'
 import jsPDF from 'jspdf'
 
 export default function Page(){
-    //refactor this to react-pdf
+    //todo refactor this to react-pdf
     const {cartItems,user} = useStore()
     const screenRef = useRef<HTMLDivElement>(null);
 
@@ -28,7 +28,7 @@ export default function Page(){
     return(
         <div className='max-w-xl mx-auto my-8'>
             <div ref={screenRef}>
-                <Receipt services={cartItems} user={user === null ? {} : user}></Receipt> 
+                <Receipt/>
             </div>
             <Button className='my-4' onClick={downloadReceipt}>Download Receipt</Button>
         </div>
