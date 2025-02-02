@@ -20,8 +20,8 @@ export default function Home(){
 
   return(
     <div className="m-4">
-      <div className='flex flex-row justify-between m-4'>
-        <div>Services</div>
+      <div className='flex flex-row justify-between items-center m-4'>
+        <div className='text-lg'>Services</div>
         <div className="flex-1 mx-8">
           <Input className='rounded-md w-full' type='text' placeholder="Search for services" onChange={(e)=>{setSearchQuery(e.target.value)}}></Input> 
         </div>

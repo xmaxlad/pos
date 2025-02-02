@@ -40,7 +40,7 @@ export default function Cart() {
                                         <div>Price: {cartItem.price}</div>
                                     </div>
                                 </div>
-                                <div className='flex flex-row'>
+                                <div className='flex flex-row items-center'>
                                     <Button variant='ghost' onClick={()=>{removeItem(cartItem.id)}}><Minus></Minus></Button>
                                     <div>{cartItem.quantity}</div>
                                     <Button variant='ghost' onClick={()=>{addItem(cartItem)}}><Plus></Plus></Button> 

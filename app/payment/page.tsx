@@ -22,7 +22,7 @@ export default function Page(){
         setMethod(PaymentMethods.filter((m)=>m.type === type)[0])
     }
     return(
-        <div className='max-w-4xl mx-auto flex flex flex-col md:flex-row justify-around m-4'>
+        <div className='max-w-4xl mx-auto flex flex flex-col md:flex-row justify-around md:items-center m-4'>
             <div className='w-fit grid grid-cols-1 sm:grid-cols-2 gap-6 mx-auto'>
                 {PaymentMethods.map((m,idx)=>
                 <div className={`w-full cursor-pointer ${method?.type === m.type ? 'bg-blue-400' : ''} my-4 p-2 border-2 rounded-md`} key={idx} onClick={()=>selectMethod(m.type)}>
@@ -61,7 +61,7 @@ function PayViaUPI(){
 function PayViaDebitCard(){
     const router = useRouter()
     return(
-        <div className='flex flex-col gap-y-4 justify-around max-w-lg'>
+        <div className='m-4 flex flex-col gap-y-4 justify-around max-w-lg'>
             <div>Debit Card</div>
             <div>Please enter your Debit Card Details to continue</div>
             <div className='flex flex-col gap-y-2'>
@@ -80,7 +80,7 @@ function PayViaDebitCard(){
 function PayViaCreditCard(){
     const router = useRouter()
     return(
-        <div className='flex flex-col gap-y-4 justify-around max-w-lg'>
+        <div className='m-4 flex flex-col gap-y-4 justify-around max-w-lg'>
             <div>Credit Card</div>
             <div>Please enter your Credir Card Details to continue</div>
             <div className='flex flex-col gap-y-2'>
@@ -100,7 +100,7 @@ function PayViaNetBanking(){
     const [bank,setBank] = useState('Select Bank')
     const router = useRouter()
     return(
-        <div className='max-w-lg'>
+        <div className='m-4 max-w-lg'>
             <div>Net Banking</div>
             <div>Please select your bank, you will be redirected to the bank page</div>
             <div className='flex flex-row justify-between py-4'>
