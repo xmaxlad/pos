@@ -3,8 +3,8 @@ export const Revenue = [
     {month:'Febuary', revenue: 300},
     {month:'March', revenue: 250},
     {month:'April', revenue: 320},
-    {month:'May', revenue: 400},
-    {month:'June', revenue: 300},
+    {month:'May', revenue: 300},
+    {month:'June', revenue: 350},
 ]
 
 export const ServicesSold = [
@@ -17,15 +17,15 @@ export const ServicesSold = [
 ]
 
 export const RevenueByCategory = [
-    {category:'Recreational',percentage:36},
-    {category:'Fitness', percentage:30},
-    {category:'Mental Health', percentage:20},
-    {category:'Others',percentage:14} 
+    {category:'Recreational',percentage:36, fill: "var(--color-chrome)"},
+    {category:'Fitness', percentage:30, fill: "var(--color-safari)"},
+    {category:'Mental Health', percentage:20, fill: "var(--color-firefox)"},
+    {category:'Others',percentage:14,fill: "var(--color-other)"} 
 ]
 
 export const TopServices = [
-    {name:'Yoga Classes by Mrs Seema', numberofServicesSold:54},
-    {name:'Jumba Classes by Mr Tanya', numberofServicesSold:22},
-    {name:'Therapy Session by Dr Tarun', numberofServicesSold:18},
-    {name:'Baking Classes by Mrs Gauri', numberofServicesSold:5},
+    {name:'Yoga', numberofServicesSold:54},
+    {name:'Jumba', numberofServicesSold:22},
+    {name:'Therapy', numberofServicesSold:18},
+    {name:'Baking', numberofServicesSold:5},
 ]

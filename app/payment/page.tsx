@@ -48,59 +48,79 @@ export default function Page(){
 
 function PayViaUPI(){
     const router = useRouter()
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        router.push('verify-payment');
+    }
+
     return(
-        <div className='flex flex-col gap-y-4 justify-around max-w-lg'>
+        <form onSubmit={handleSubmit} className='flex flex-col gap-y-4 justify-around max-w-lg'>
             <div>UPI Id</div>
             <div>Please enter your UPI Details to continue</div>
-            <Input type='text' placeholder='UPI Id'></Input>
-            <Button onClick={()=>{router.push('verify-payment')}}>Continue</Button>
-        </div>
+            <Input required={true} type='text' placeholder='UPI Id'></Input>
+            <Button type="submit">Continue</Button>
+        </form>
     )
 }
 
 function PayViaDebitCard(){
     const router = useRouter()
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        router.push('verify-payment');
+    }
+
     return(
-        <div className='m-4 flex flex-col gap-y-4 justify-around max-w-lg'>
+        <form onSubmit={handleSubmit} className='m-4 flex flex-col gap-y-4 justify-around max-w-lg'>
             <div>Debit Card</div>
             <div>Please enter your Debit Card Details to continue</div>
             <div className='flex flex-col gap-y-2'>
-                <Input type='text' placeholder='Debit Card Number'></Input>
+                <Input required type='text' placeholder='Debit Card Number'></Input>
                 <div className='flex flex-row gap-x-2'>
-                    <Input className='w-1/3' type='text' placeholder='CVV'></Input>
-                    <Input className='w-1/3' type='text' placeholder='Expiry Month'></Input>
-                    <Input className='w-1/3' type='text' placeholder='Expiry Year'></Input>
+                    <Input required className='w-1/3' type='text' placeholder='CVV'></Input>
+                    <Input required className='w-1/3' type='text' placeholder='Expiry Month'></Input>
+                    <Input required className='w-1/3' type='text' placeholder='Expiry Year'></Input>
                 </div>
             </div> 
-            <Button onClick={()=>{router.push('verify-payment')}}>Continue</Button>
-        </div>
+            <Button type="submit">Continue</Button>
+        </form>
     )
 }
 
 function PayViaCreditCard(){
     const router = useRouter()
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        router.push('verify-payment');
+    }
+
     return(
-        <div className='m-4 flex flex-col gap-y-4 justify-around max-w-lg'>
+        <form onSubmit={handleSubmit} className='m-4 flex flex-col gap-y-4 justify-around max-w-lg'>
             <div>Credit Card</div>
-            <div>Please enter your Credir Card Details to continue</div>
+            <div>Please enter your Credit Card Details to continue</div>
             <div className='flex flex-col gap-y-2'>
-                <Input type='text' placeholder='Credit Card Number'></Input>
+                <Input required type='text' placeholder='Credit Card Number'></Input>
                 <div className='flex flex-row gap-x-2'>
-                    <Input className='w-1/3' type='text' placeholder='CVV'></Input>
-                    <Input className='w-1/3' type='text' placeholder='Expiry Month'></Input>
-                    <Input className='w-1/3' type='text' placeholder='Expiry Year'></Input>
+                    <Input required className='w-1/3' type='text' placeholder='CVV'></Input>
+                    <Input required className='w-1/3' type='text' placeholder='Expiry Month'></Input>
+                    <Input required className='w-1/3' type='text' placeholder='Expiry Year'></Input>
                 </div>
             </div> 
-            <Button onClick={()=>{router.push('verify-payment')}}>Continue</Button>
-        </div>
+            <Button type="submit">Continue</Button>
+        </form>
     )
 }
 
 function PayViaNetBanking(){
     const [bank,setBank] = useState('Select Bank')
     const router = useRouter()
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        router.push('verify-payment');
+    }
+
     return(
-        <div className='m-4 max-w-lg'>
+        <form onSubmit={handleSubmit} className='m-4 max-w-lg'>
             <div>Net Banking</div>
             <div>Please select your bank, you will be redirected to the bank page</div>
             <div className='flex flex-row justify-between py-4'>
@@ -115,8 +135,8 @@ function PayViaNetBanking(){
                 </DropdownMenuGroup>
                 </DropdownMenuContent>
             </DropdownMenu>
-            <Button onClick={()=>{router.push('verify-payment')}} disabled={bank === 'Select Bank' ? true : false }>Continue</Button>
+            <Button type="submit" onClick={()=>{router.push('verify-payment')}} disabled={bank === 'Select Bank' ? true : false }>Continue</Button>
             </div>
-        </div>
+        </form>
     )
 }

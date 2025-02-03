@@ -9,25 +9,29 @@ import {useRouter} from 'next/navigation'
 export default function Page(){
     const {setUser, user} = useStore()
     const router = useRouter()
+    function handleSubmit(e : React.FormEvent){
+        e.preventDefault()
+        router.push('/payment')
+    }
     return(
-        <div className='max-w-md mx-auto my-8 p-6 border rounded-lg shadow-lg bg-white'>
+        <form onSubmit={handleSubmit} className='max-w-md mx-auto my-8 p-6 border rounded-lg shadow-lg bg-white'>
             <div className='flex flex-col gap-y-4'>
                 <div>Enter your details for checkout.</div>
-                <Input className='border border-gray-300 rounded-md p-2' type='text' placeholder="Name" onChange={(e) => {
+                <Input required className='border border-gray-300 rounded-md p-2' type='text' placeholder="Name" onChange={(e) => {
                     setUser({ ...user, name: e.target.value }) 
                 }}></Input>
-                <Input className='border border-gray-300 rounded-md p-2' type='email' placeholder="Email" onChange={(e)=>{
+                <Input required className='border border-gray-300 rounded-md p-2' type='email' placeholder="Email" onChange={(e)=>{
                     setUser({...user, email : e.target.value})
                 }}></Input>
-                <Input className='border border-gray-300 rounded-md p-2' type='phone' placeholder="Phone Number" onChange={(e)=>{
+                <Input required className='border border-gray-300 rounded-md p-2' type='phone' placeholder="Phone Number" onChange={(e)=>{
                     setUser({...user, phoneNumber : Number(e.target.value)}) 
                 }}></Input>
             </div>
             <div>
-                <Button className='w-full mt-4 text-white rounded-md p-2' onClick={()=>{router.push('/payment')}}>
+                <Button className='w-full mt-4 text-white rounded-md p-2' type='submit'>
                     Proceed to payment
                 </Button>
             </div>
-        </div>
+        </form>
     )
 }
