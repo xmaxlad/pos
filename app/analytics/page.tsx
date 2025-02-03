@@ -1,7 +1,7 @@
 "use client"
 
 import { TrendingUp } from "lucide-react"
-import { Bar, BarChart, CartesianGrid, XAxis,Label, Pie, PieChart, YAxis } from "recharts"
+import { Bar, BarChart, CartesianGrid, XAxis, Pie, PieChart, YAxis } from "recharts"
 import { Revenue, ServicesSold, RevenueByCategory, TopServices } from "@/data/analytics"
 import {
   Card,
@@ -125,7 +125,7 @@ function ServicesChart(){
     )
 }
 
-export function RevenueByPercentageChart() {
+function RevenueByPercentageChart() {
     const chartConfig = {
         visitors: {
           label: "Visitors",
@@ -182,7 +182,7 @@ export function RevenueByPercentageChart() {
     )
   }
 
-  export function TopServicesChart() {
+function TopServicesChart() {
     const chartConfig = {
         desktop: {
           label: "numberofServicesSold",
