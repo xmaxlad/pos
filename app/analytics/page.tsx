@@ -23,7 +23,7 @@ export default function Page(){
   const router = useRouter()
     return(
         <div className='m-2'>
-            <div className='flex flex-row'>
+            <div className='flex flex-row gap-x-2'>
             <div className='cursor-pointer hover:underline text-lg' onClick={()=>{router.push('/')}}>Services</div>
             <div className='cursor-pointer hover:underline text-lg' onClick={()=>{router.push('/analytics')}}>Analytics</div>
             </div>

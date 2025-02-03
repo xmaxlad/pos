@@ -21,7 +21,7 @@ export default function Home(){
   },[searchQuery])  
 
   return(
-    <div className="m-4">
+    <div className="my-4 mx-2">
       <div className='flex flex-row justify-between items-center m-4'>
         <div className='cursor-pointer hover:underline text-lg' onClick={()=>{router.push('/')}}>Services</div>
         <div className='cursor-pointer hover:underline text-lg px-2' onClick={()=>{router.push('/analytics')}}>Analytics</div>

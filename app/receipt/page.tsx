@@ -7,7 +7,6 @@ import html2canvas from 'html2canvas'
 import jsPDF from 'jspdf'
 
 export default function Page(){
-    //todo refactor this to react-pdf
     const screenRef = useRef<HTMLDivElement>(null);
 
   const downloadReceipt = async () => {
@@ -20,7 +19,7 @@ export default function Page(){
     const imgWidth = 210; // A4 width in mm
     const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-    pdf.addImage(imgData, "PNG", 30, 30, imgWidth, imgHeight);
+    pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
     pdf.save("receipt.pdf");
   };
     return(
